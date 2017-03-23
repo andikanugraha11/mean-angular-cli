@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
 //static file
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 //set API routes
 app.use('/api', api);
@@ -23,7 +23,7 @@ app.use('/api', api);
 //404 file
 
 app.get('*', (req,res)=>{
-	res.sendFile(path.join(__dirname, 'public/404.html'));
+	res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 const port = process.env.PORT || '3000';
